@@ -54,8 +54,8 @@ public class LogicaClasificacion {
             if(!lista.get(izquierdo).equals(lista.get(derecha))){
                 return false;
             }
-            derecha ++;
-            izquierdo --;
+            derecha --;
+            izquierdo ++;
         }
 
         return true;
