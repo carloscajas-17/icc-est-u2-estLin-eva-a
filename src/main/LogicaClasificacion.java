@@ -15,8 +15,21 @@ public class LogicaClasificacion {
      * @return nueva cola con los nombres en orden invertido
      */
     public Queue<String> invertirColaNombres(Queue<String> cola) {
+        Stack<String> pila = new Stack<>();
 
-        return new LinkedList<>(Arrays.asList()); // Simulación de resultado
+        while(!cola.isEmpty()){
+            pila.push(cola.poll());
+
+        }
+
+        Queue<String> resultado = new LinkedList<>() ;
+        while(!pila.isEmpty()){
+            resultado.add(pila.pop());
+
+        }
+        return resultado;
+
+        //return new LinkedList<>(Arrays.asList()); // Simulación de resultado
     }
 
     /**
@@ -32,8 +45,20 @@ public class LogicaClasificacion {
      * @return true si forman un palíndromo, false si no
      */
     public boolean verificarPalindromoCola(Queue<String> cola) {
+        List<String> lista = new ArrayList<>(cola);
 
-        return false;
+        int izquierdo = 0;
+        int derecha =lista.size()-1;
+
+        while(izquierdo < derecha){
+            if(!lista.get(izquierdo).equals(lista.get(derecha))){
+                return false;
+            }
+            derecha ++;
+            izquierdo --;
+        }
+
+        return true;
     }
 
 }
